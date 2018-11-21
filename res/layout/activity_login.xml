@@ -1,0 +1,131 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.Login">
+
+    <!-- Login progress -->
+    <LinearLayout android:id="@+id/login_status"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <ProgressBar style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"/>
+        <TextView
+            android:id="@+id/login_status_message"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/login_progress_signing_in" />
+    </LinearLayout>
+
+    <!-- Login form -->
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+        <LinearLayout style="@style/LoginFormContainer"
+            android:orientation="vertical"
+            android:weightSum="1"
+            android:gravity="fill">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView"
+                android:layout_gravity="center_horizontal"
+                android:maxHeight="83dp"
+                android:maxWidth="101dp"
+                android:minHeight="83dp"
+                android:minWidth="101dp"
+                android:longClickable="false" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/itc_meet"
+                android:id="@+id/title"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#CDDC39"
+                android:textStyle="bold"
+                android:textSize="35sp"
+                android:height="60dp" />
+
+            <EditText
+                android:id="@+id/email"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:hint="@string/prompt_username" />
+
+            <EditText
+                android:id="@+id/password"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_password"
+                android:inputType="textPassword"
+                android:imeActionLabel="@string/action_sign_in_short"
+                android:imeActionId="@+id/login"
+                android:imeOptions="actionUnspecified" />
+
+
+            <Button android:id="@+id/sign_in_button"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Sign in"
+                    android:paddingLeft="32dp"
+                    android:paddingRight="32dp"
+                    android:layout_gravity="center_horizontal"
+                android:background="#CDDC39"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <Button android:id="@+id/register_button"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Register"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:background="#4CAF50"
+                android:textColor="#FFFFFF"
+                android:clickable="false"
+                android:layout_gravity="center_horizontal"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/by_using_itc_meet_you_agree_to_send_location_data"
+                android:id="@+id/disclaimer"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical|bottom" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/itc_meet_2016"
+                android:id="@+id/signature"
+                android:layout_gravity="center_horizontal"
+                android:gravity="bottom|center_horizontal"
+                android:layout_weight="0.95" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</merge>
